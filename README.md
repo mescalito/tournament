@@ -1,11 +1,13 @@
 
+
+
 # Tournament System
 
-This app saves game results and ranks players according to their wins & losses
+This app saves game results and ranks players according to their wins & losses.
 
 The app follows the **Separation of concerns** software architecture design pattern.
 
-The app is made by ReactJSin the frondend, NodeJS in the backend and docker for provisioning.
+The app is a ReactJSin the frontend, NodeJS in the backend, and docker for provisioning.
 
 # Easy Setup
 
@@ -22,12 +24,12 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 ----
 
-1. Donwload the repo
+1. Download the repo
 ```
 $: git clone git@github.com:mescalito/tournament.git
 ```
 
-Note that the repo is HUGE because node_modules folder is present (twise). I know right!
+Note that the repo is HUGE because the node_modules folder is present (twice). I know, right!
 
  2. Run:
 ```
@@ -50,7 +52,7 @@ BackEnd API: 🤘
 
 # Containers
 
-You just creted three new containers
+You just created three new containers
 - For MySQL
 User:root
 Pw: root
@@ -106,14 +108,25 @@ API Swagger: [http://localhost:7000/api-explorer](http://localhost:7000/api-expl
 Frontend: [http://localhost:3000](http://localhost:3000)
 ![enter image description here](https://i.ibb.co/1mVySws/frontend.png)
 
-TODO:
-- Migrato code to async await back and frond end
-- Migrate to react hooks, frontend
-- User ORM (sequalize?) , backend
-- Include Istambul for 100% code coverage, backend
-- TTD with Jest or Mocha, backend
+## TODO
+
+FrontEnd & backend
+- Migrate code to async await
+- Minify and bundling for production-ready
+
+Frontend:
+
+- Migrate to react hooks
+- Add formik, styled-components and yup to improve UI and UX validation
+
+Backend
+
+- User ORM (sequalize?)
+- Include Istambul for 100% code coverage
+- TTD with Jest or Mocha
 - Deploy to microservice in AWS.
 - Use Joi library for Swagger autovalidation
-- Couple endpoints with swagger spec for validation and improve code injection
-- Minify and bundle front and backend
-- Add formik, styled-components and yup to improve UI and UX validation, frontend
+- Couple endpoints with swagger spec for validation and improve gaints code injection
+
+General:
+- Remove node_modules from repo by improving dockerfile (container) to 'npm install'.
