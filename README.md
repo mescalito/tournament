@@ -39,9 +39,12 @@ $: cd tournament/
 $: docker-compose up
 ```
 
-You are good to go. Open your browser and navigate to:
+🤙 You are good to go. Open your browser and navigate to:
+
 [http://localhost:3000](http://localhost:3000)
-BackEnd API:
+ 
+BackEnd API: 🤘
+
 [http://localhost:7000/api-explorer](http://localhost:7000/api-explorer)
 
 
@@ -104,12 +107,12 @@ Frontend: [http://localhost:3000](http://localhost:3000)
 ![enter image description here](https://i.ibb.co/1mVySws/frontend.png)
 
 TODO:
-Migrato code to async await back and frond end
-Migrate to react hooks, frontend
-User ORM (sequalize?) , backend
-Include Istambul for 100% code coverage, backend
-TTD with Jest or Mocha, backend
-Deploy to microservice in AWS.
-Use Joi library for Swagger autovalidation
-Couple endpoints with swagger spec for validation and improve code injection
-Minify and bundle front and backend
+- Migrato code to async await back and frond end
+- Migrate to react hooks, frontend
+- User ORM (sequalize?) , backend
+- Include Istambul for 100% code coverage, backend
+- TTD with Jest or Mocha, backend
+- Deploy to microservice in AWS.
+- Use Joi library for Swagger autovalidation
+- Couple endpoints with swagger spec for validation and improve code injection
+- Minify and bundle front and backend
