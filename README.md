@@ -43,11 +43,19 @@ $: docker-compose up
 
 🤙 You are good to go. Open your browser and navigate to:
 
+## FrontEnd 🤘
+
 [http://localhost:3000](http://localhost:3000)
  
-BackEnd API: 🤘
+ Repository:
+ [https://github.com/mescalito/tournament_frontend/tree/ping-pong](https://github.com/mescalito/tournament_frontend/tree/ping-pong)
+
+## BackEnd API 🤘
 
 [http://localhost:7000/api-explorer](http://localhost:7000/api-explorer)
+
+Repository:
+[https://github.com/mescalito/tournament_backend](https://github.com/mescalito/tournament_backend)
 
 
 # Containers
@@ -64,7 +72,26 @@ Pw: root
 
 ## Stored Procedure
 
-    CREATE DEFINER=`root`@`%` PROCEDURE `resultsGame`(player1 VARCHAR(45), player2 VARCHAR(45), player1Score tinyint, player2Score tinyint)
+Payload:
+
+    player1: Charlie  
+    player2: Nico  
+    player1Score: 5  
+    player2Score: 9
+
+Duties:
+
+ 1. Check if the player with name "Charlie" already exists, if not then
+    `create it: INSERT INTO ' players'  (' name' ) VALUES ('Charlie');`
+ 1. Then grabs newly created ID
+ 1. Check if the player with name "Sofia" already exists, if already exist then grab Sofia's ID
+ 1. Insert into Games `INSERT INTO ' tournament' .' games'  (' player1id' , ' player2id' , ' player1Score' , ' player2Score' ) VALUES ({Sofia'sID},
+    {Chalie'sID}, '9', '5');`
+ 1. the player with the highest score is always inserted into column games.player1id. In other words, the column Player1Id will always contain the winners.
+
+SP:
+
+	CREATE DEFINER=`root`@`%` PROCEDURE `resultsGame`(player1 VARCHAR(45), player2 VARCHAR(45), player1Score tinyint, player2Score tinyint)
     BEGIN
     DECLARE player1ID INT;
     DECLARE player2ID INT;
