@@ -9,9 +9,8 @@ The app follows the **Separation of concerns** software architecture design patt
 
 The app is a ReactJSin the frontend, NodeJS in the backend, and docker for provisioning.
 
-# Easy Setup
+## Prerequisites
 
-**Prerequisites:**
  - Docker
  - Docker compose
 ```
@@ -22,7 +21,7 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
  - Make these ports available: 3306, 7000, 3000. They are needed for the apps to run.
 
-----
+# Easy Setup
 
 1. Download the repo
 ```
