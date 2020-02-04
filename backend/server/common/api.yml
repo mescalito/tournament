@@ -1,0 +1,183 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Tournament System
+  description: My cool app
+basePath: /api/v1
+tags:
+  - name: Tournament
+    description: Simple example endpoints
+  - name: Specification
+    description: Saves ping pong game results and ranks players according to their wins and losses
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+
+definitions:
+  game:
+    required:
+      - firstPlayer
+      - secondPlayer
+      - firstPlayerScore
+      - secondPlayerScore
+    properties:
+      firstPlayer:
+        type: string
+        minLength: 1
+        pattern: "^[a-zA-Z0-9- ]+$"
+        example: goku
+      secondPlayer:
+        type: string
+        minLength: 1
+        pattern: "^[a-zA-Z0-9- ]+$"
+        example: roshi
+      firstPlayerScore:
+        type: integer
+        minLength: 1
+        minimum: 0
+        maximum: 99999
+        example: 5
+      secondPlayerScore:
+        type: integer
+        minLength: 1
+        minimum: 0
+        maximum: 99999
+        example: 5
+
+
+paths:
+  /ranks:
+    get:
+      description: Returns all players with ranks and points
+      operationId: findAllRanks
+      responses:
+        default:
+          description: Returns the matching ranks
+          schema:
+            properties:
+              id:
+                type: integer 
+                format: int32
+                description: The auto-generated rank ID
+                readOnly: true
+                example: 65
+              name:
+                type: string
+                minLength: 1
+                pattern: "^[a-zA-Z0-9- ]+$"
+                example: goku
+              won:
+                type: integer
+                example: 5
+              lost:
+                type: integer
+                example: 5
+              tied:
+                type: integer
+                example: 5
+              points:
+                type: integer
+                example: 5
+          headers:
+            last-modified:
+              type: string
+              description: The URL of the newly-added game
+  /games:
+    post:
+      description: Create a new game
+      parameters:
+        - name: game
+          in: body
+          description: The game to add to the tournament
+          required: true
+          schema:
+            $ref: "#/definitions/game"
+      responses:
+        201:
+          description: Returns the newly-added game
+          schema:
+            properties:
+              id:
+                # Returned by GET, not used in POST/PUT/PATCH
+                type: integer 
+                format: int32
+                description: The auto-generated game ID
+                readOnly: true
+                example: 2
+              firstPlayer:
+                type: string
+                minLength: 1
+                pattern: "^[a-zA-Z0-9- ]+$"
+                example: goku
+              secondPlayer:
+                type: string
+                minLength: 1
+                pattern: "^[a-zA-Z0-9- ]+$"
+                example: roshi
+              firstPlayerScore:
+                type: integer
+                minLength: 1
+                minimum: 0
+                maximum: 99999
+                example: 5
+              secondPlayerScore:
+                type: integer
+                minLength: 1
+                minimum: 0
+                maximum: 99999
+                example: 5
+              date:
+                type: string
+                format: 'date'
+                description: The auto-generated date when game was created
+          headers:
+            Location:
+              type: string
+              description: The URL of the request
+    get:
+      description: Returns all games with names and scores
+      operationId: findAllGames
+      responses:
+        default:
+          description: Returns the matching games
+          schema:
+            properties:
+              id:
+                type: integer 
+                format: int32
+                description: The auto-generated rank ID
+                readOnly: true
+                example: 65
+              player1name:
+                type: string
+                minLength: 1
+                pattern: "^[a-zA-Z0-9- ]+$"
+                example: goku
+              player2name:
+                type: string
+                minLength: 1
+                pattern: "^[a-zA-Z0-9- ]+$"
+                example: goku
+              player1Score:
+                type: integer
+                minLength: 1
+                minimum: 0
+                maximum: 99999
+                example: 5
+              player2Score:
+                type: integer
+                minLength: 1
+                minimum: 0
+                maximum: 99999
+                example: 5
+              date:
+                type: string
+                format: 'date'
+                description: The auto-generated date when game was created
+          headers:
+            last-modified:
+              type: string
+              description: The URL of the newly-added game
