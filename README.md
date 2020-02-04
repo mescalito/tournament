@@ -116,3 +116,4 @@ TODO:
 - Use Joi library for Swagger autovalidation
 - Couple endpoints with swagger spec for validation and improve code injection
 - Minify and bundle front and backend
+- Add formik, styled-components and yup to improve UI and UX validation, frontend
