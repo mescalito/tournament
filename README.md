@@ -49,12 +49,15 @@ You are good to go. Open your browser and navigate to:
 - Redux
 - Redux-Thunk
 ````
+./frontend/package.json
+...
     "scripts": { 
 	    "start": "react-scripts start",
 	    "build": "react-scripts build",
 	    "test": "react-scripts test --env=jsdom",
 	    "eject": "react-scripts eject"
     }
+...
 ````
  
  Repository:
@@ -75,6 +78,8 @@ You are good to go. Open your browser and navigate to:
 - nodemon
 
 ````
+./backend/package.json
+...
 "scripts": {
 	"start": "node dist/index.js",
 	"compile": "babel server --out-dir dist --delete-dir-on-start --source-maps inline --copy-files",
@@ -85,16 +90,19 @@ You are good to go. Open your browser and navigate to:
 	"lint": "eslint -c .eslintrc.json {server,test}/**",
 	"lint:fix": "eslint --fix -c .eslintrc.json {server,test}/**"
 }
+...
 ````
 
 ````
-backend/server/config/dbconfig.js
+./backend/server/config/dbconfig.js
+...
      {
      host:  'db', // <-------- **VERY IMPORTANT** coming from docker-compose.yml!!!!
      user:  'root',
      password:  'root',
      database:  'tournament',
      }
+...
 ````
 
 Repository:
