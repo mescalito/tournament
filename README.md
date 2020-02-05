@@ -48,14 +48,14 @@ You are good to go. Open your browser and navigate to:
 - ReactJS 
 - Redux
 - Redux-Thunk
-
-    > "scripts": { 
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-    > }
-
+````
+    "scripts": { 
+	    "start": "react-scripts start",
+	    "build": "react-scripts build",
+	    "test": "react-scripts test --env=jsdom",
+	    "eject": "react-scripts eject"
+    }
+````
  
  Repository:
  [https://github.com/mescalito/tournament_frontend/tree/ping-pong](https://github.com/mescalito/tournament_frontend/tree/ping-pong)
@@ -73,6 +73,19 @@ You are good to go. Open your browser and navigate to:
 - prettier
 - Mocha
 - nodemon
+
+````
+"scripts": {
+	"start": "node dist/index.js",
+	"compile": "babel server --out-dir dist --delete-dir-on-start --source-maps inline --copy-files",
+	"dev": "nodemon server --exec babel-node --config .nodemonrc.json | pino-pretty",
+	"dev:debug": "nodemon server --exec babel-node --config .nodemonrc.json --inspect | pino-pretty",
+	"test": "mocha --require @babel/register --exit",
+	"test:debug": "mocha --require @babel/register --inspect-brk --exit",
+	"lint": "eslint -c .eslintrc.json {server,test}/**",
+	"lint:fix": "eslint --fix -c .eslintrc.json {server,test}/**"
+}
+````
 
 ````
 backend/server/config/dbconfig.js
