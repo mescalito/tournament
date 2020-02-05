@@ -74,12 +74,15 @@ $: docker-compose up
 - Mocha
 - nodemon
 
-    > {
-    > host:  'db', // <---------- **VERY IMPORTANT** coming from docker-compose.yml!!!!
-    > user:  'root',
-    > password:  'root',
-    > database:  'tournament',
-    > }
+````
+backend/server/config/dbconfig.js
+     {
+     host:  'db', // <-------- **VERY IMPORTANT** coming from docker-compose.yml!!!!
+     user:  'root',
+     password:  'root',
+     database:  'tournament',
+     }
+````
 
 Repository:
 [https://github.com/mescalito/tournament_backend](https://github.com/mescalito/tournament_backend)
