@@ -41,7 +41,7 @@ $: cd tournament/
 $: docker-compose up
 ```
 
-😎🙌 You are good to go. Open your browser and navigate to:
+You are good to go. Open your browser and navigate to:
 
 # FrontEnd 🤙
 [http://localhost:3000](http://localhost:3000)
@@ -88,7 +88,7 @@ Repository:
 [https://github.com/mescalito/tournament_backend](https://github.com/mescalito/tournament_backend)
 
 
-# Docker Containers
+# Docker Containers 🎮
 ## 1. Mysql
 - Container Name: **mysql8**
 - User:root
@@ -104,7 +104,7 @@ Repository:
 - Container Name: **react**
 - Port 3000
 
-# Stored Procedure
+# Stored Procedure 🧠
 
 **Payload**:
 
@@ -169,7 +169,7 @@ API Swagger: [http://localhost:7000/api-explorer](http://localhost:7000/api-expl
 Frontend: [http://localhost:3000](http://localhost:3000)
 ![enter image description here](https://i.ibb.co/1mVySws/frontend.png)
 
-## TODO
+## TODO 🤨
 
 FrontEnd & backend
 - Migrate code to async await
