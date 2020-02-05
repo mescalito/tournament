@@ -1,6 +1,7 @@
 
 
 
+
 # Tournament System
 
 This app saves game results and ranks players according to their wins & losses.
@@ -9,7 +10,7 @@ The app follows the **Separation of concerns** software architecture design patt
 
 The app is a ReactJSin the frontend, NodeJS in the backend, and docker for provisioning.
 
-## Prerequisites
+**Prerequisites**
 
  - Docker
  - Docker compose
@@ -21,7 +22,7 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
  - Make these ports available: 3306, 7000, 3000. They are needed for the apps to run.
 
-# Easy Setup
+## Easy Setup 1,2,3...done!
 
 1. Download the repo
 ```
@@ -42,43 +43,73 @@ $: docker-compose up
 
 🤙 You are good to go. Open your browser and navigate to:
 
-## FrontEnd 🤘
-
+# FrontEnd 🤘
 [http://localhost:3000](http://localhost:3000)
+- ReactJS 
+- Redux
+- Redux-Thunk
+
+> "scripts": { 
+"start": "react-scripts start",
+"build": "react-scripts build",
+"test": "react-scripts test --env=jsdom",
+"eject": "react-scripts eject"
+> }
  
  Repository:
  [https://github.com/mescalito/tournament_frontend/tree/ping-pong](https://github.com/mescalito/tournament_frontend/tree/ping-pong)
 
-## BackEnd API 🤘
+# BackEnd API 🤘
 
 [http://localhost:7000/api-explorer](http://localhost:7000/api-explorer)
+
+- express
+- mysql
+- pino
+- swagger-express-middleware
+- Babel
+- eslint
+- prettier
+- Mocha
+- nodemon
+
+> {
+> host:  'db', // <---------- **VERY IMPORTANT** coming from docker-compose.yml!!!!
+> user:  'root',
+> password:  'root',
+> database:  'tournament',
+> }
 
 Repository:
 [https://github.com/mescalito/tournament_backend](https://github.com/mescalito/tournament_backend)
 
 
-# Containers
+# Docker Containers
+## 1. Mysql
+- Container Name: **mysql8**
+- User:root
+- Pw: root
+- Port: 3306
 
-You just created three new containers
-- For MySQL
-User:root
-Pw: root
 (Just remember to make sure port 3306 is available when running docker-compose)
 
-- NodeJS backend on port 7000 running Express/Babel/Swagger
+## 2. Backend
+- Container Name: **mysql8**
+- Port 7000
+## 2. Frontend
+- Container Name: **react**
+- Port 3000
 
-- NodeJS frontend on port 3000 running ReactJS with Redux and Redux-thunk
+# Stored Procedure
 
-## Stored Procedure
-
-Payload:
+**Payload**:
 
     player1: Charlie  
     player2: Nico  
     player1Score: 5  
     player2Score: 9
 
-Duties:
+**Duties**:
 
  1. Check if the player with name "Charlie" already exists, if not then
     `create it: INSERT INTO ' players'  (' name' ) VALUES ('Charlie');`
@@ -88,7 +119,7 @@ Duties:
     {Chalie'sID}, '9', '5');`
  1. the player with the highest score is always inserted into column games.player1id. In other words, the column Player1Id will always contain the winners.
 
-SP:
+**SP:**
 
 	CREATE DEFINER=`root`@`%` PROCEDURE `resultsGame`(player1 VARCHAR(45), player2 VARCHAR(45), player1Score tinyint, player2Score tinyint)
     BEGIN
