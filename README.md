@@ -41,9 +41,9 @@ $: cd tournament/
 $: docker-compose up
 ```
 
-🤙 You are good to go. Open your browser and navigate to:
+😎🙌 You are good to go. Open your browser and navigate to:
 
-# FrontEnd 🤘
+# FrontEnd 🤙
 [http://localhost:3000](http://localhost:3000)
 - ReactJS 
 - Redux
