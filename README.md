@@ -49,12 +49,13 @@ $: docker-compose up
 - Redux
 - Redux-Thunk
 
-> "scripts": { 
-"start": "react-scripts start",
-"build": "react-scripts build",
-"test": "react-scripts test --env=jsdom",
-"eject": "react-scripts eject"
-> }
+    > "scripts": { 
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+    > }
+
  
  Repository:
  [https://github.com/mescalito/tournament_frontend/tree/ping-pong](https://github.com/mescalito/tournament_frontend/tree/ping-pong)
@@ -73,12 +74,12 @@ $: docker-compose up
 - Mocha
 - nodemon
 
-> {
-> host:  'db', // <---------- **VERY IMPORTANT** coming from docker-compose.yml!!!!
-> user:  'root',
-> password:  'root',
-> database:  'tournament',
-> }
+    > {
+    > host:  'db', // <---------- **VERY IMPORTANT** coming from docker-compose.yml!!!!
+    > user:  'root',
+    > password:  'root',
+    > database:  'tournament',
+    > }
 
 Repository:
 [https://github.com/mescalito/tournament_backend](https://github.com/mescalito/tournament_backend)
