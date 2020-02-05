@@ -88,7 +88,7 @@ Repository:
 [https://github.com/mescalito/tournament_backend](https://github.com/mescalito/tournament_backend)
 
 
-# Docker Containers 🎮
+# Docker Containers 🚚
 ## 1. Mysql
 - Container Name: **mysql8**
 - User:root
@@ -100,7 +100,7 @@ Repository:
 ## 2. Backend
 - Container Name: **mysql8**
 - Port 7000
-## 2. Frontend
+## 3. Frontend
 - Container Name: **react**
 - Port 3000
 
