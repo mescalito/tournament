@@ -137,6 +137,9 @@ Repository:
  1. the player with the highest score is always inserted into column games.player1id. In other words, the column Player1Id will always contain the winners.
 
 **SP:**
+````
+call resultsGame('Charlie', 'Nico', 5, 9);
+````
 
 	CREATE DEFINER=`root`@`%` PROCEDURE `resultsGame`(player1 VARCHAR(45), player2 VARCHAR(45), player1Score tinyint, player2Score tinyint)
     BEGIN
